@@ -1,0 +1,47 @@
+import cv2 as cv
+import numpy as np
+
+def showw(name,image):#打开图片
+    cv.imshow(name,image)
+    cv.waitKey(0)#按任意键停止
+    cv.destroyAllWindows()#关闭所有窗口
+
+
+def sx(image):#打开图片的三个通道
+    height=image.shape[0]
+    width=image.shape[1]
+    channels=image.shape[2]
+    print('高为；',height,'宽为：',width,'通道为：',channels)
+    
+    
+def video_openn(cap):#打开视频文件
+    while (True):
+        ret, frame = cap.read()  # 捕获一帧图像
+        if ret:
+            cv.imshow('frame', frame)
+            cv.waitKey(25)#25代表每一帧图像显示2.5毫秒
+        else:
+            break
+    cap.release()  # 关闭相机
+    cv.waitKey(0)
+    cv.destroyAllWindows()
+
+def video_demo():
+    capture = cv.VideoCapture(0)
+    while(True):
+        ret, frame = capture.read()
+        frame = cv.flip(frame, 1)#把摄像头帧数取反
+        cv.imshow("video", frame)
+        c = cv.waitKey(50)#等待5毫秒
+        if c == 27:#27为ESC的ASCII值
+            break
+    
+image=cv.imread(r"C:\Users\www\Desktop\videos\lena.png")
+showw('Lena',image)
+
+sx(image)
+
+cap = cv.VideoCapture(r"C:\Users\www\Desktop\videos\los_angeles.mp4")  # 打开视频文件
+video_openn(cap)
+
+video_demo()
