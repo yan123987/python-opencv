@@ -32,7 +32,7 @@ def video_demo():
         ret, frame = capture.read()
         frame = cv.flip(frame, 1)#把摄像头帧数取反
         cv.imshow("video", frame)
-        c = cv.waitKey(50)#等待5毫秒
+        c = cv.waitKey(50)#等待50毫秒
         if c == 27:#27为ESC的ASCII值
             break
     
