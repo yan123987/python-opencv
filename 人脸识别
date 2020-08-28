@@ -66,7 +66,7 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 
 eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
 # 调用摄像头摄像头
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(r"C:\Users\www\Desktop\videos\face1.mp4")
 
 while (True):
     # 获取摄像头拍摄到的画面
