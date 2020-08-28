@@ -1,6 +1,7 @@
 import cv2 as cv
 import numpy as np
-
+#基于距离变换的分水岭算法
+#输入图像--灰度--二值--距离变换--寻找种子--生成Marker--分水岭变换--输出图像--END
 
 def watershed_demo():
     # remove noise if any
